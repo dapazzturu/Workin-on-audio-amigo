@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#070b16">
+  <meta name="description" content="A little journey beyond the stars.">
+  <title>Beyond the Event Horizon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body data-scene="intro">
+  <canvas id="universe" aria-hidden="true"></canvas>
+  <video
+      class="black-hole"
+      id="blackHoleVideo"
+      aria-hidden="true"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+  ><source src="assets/video/Black_Hole_Accretion_Disk_Sim_1080.webm" type="video/webm"></video>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <header class="hud">
+    <a class="wordmark" href="#" aria-label="Beyond the Event Horizon home">BEYOND <span>✦</span></a>
+    <div class="hud-right">
+      <span id="chapterLabel">Prologue</span>
+    </div>
+  </header>
+
+  <main id="experience">
+    <section class="scene scene-active" id="scene-intro" data-scene="intro">
+      <div class="intro-copy">
+  <p class="eyebrow reveal">A little surprise for you</p>
+
+  <h1 class="display reveal delay-1">
+    SURPRISEE!
+    <br>
+    <em>I have something to tell you.</em>
+  </h1>
+
+  <h3 class="body-copy reveal delay-2">
+    So, I made a little something for you.
+    <br>
+    I hope you'll enjoy this journey.
+  </h3>
+
+  <button class="primary-button reveal delay-3" id="beginJourney">
+    <span>Let's begin</span><i>↗</i>
+  </button>
+</div>
+      <figure class="sagittarius" aria-label="The constellation Sagittarius">
+        <svg viewBox="0 0 226 209" aria-hidden="true">
+        <path class="sgr-line" pathLength="1" style="--i:0" d="M165.6 167.6 L173.6 115.3"/>
+        <path class="sgr-line" pathLength="1" style="--i:1" d="M173.6 115.3 L156.0 64.6"/>
+        <path class="sgr-line" pathLength="1" style="--i:2" d="M156.0 64.6 L111.1 82.7"/>
+        <path class="sgr-line" pathLength="1" style="--i:3" d="M111.1 82.7 L86.6 74.7"/>
+        <path class="sgr-line" pathLength="1" style="--i:4" d="M86.6 74.7 L57.0 90.5"/>
+        <path class="sgr-line" pathLength="1" style="--i:5" d="M57.0 90.5 L68.0 115.9"/>
+        <path class="sgr-line" pathLength="1" style="--i:6" d="M68.0 115.9 L165.6 167.6"/>
+        <path class="sgr-line" pathLength="1" style="--i:7" d="M111.1 82.7 L68.0 115.9"/>
+        <path class="sgr-line" pathLength="1" style="--i:8" d="M173.6 115.3 L212.2 122.1"/>
+        <path class="sgr-line" pathLength="1" style="--i:9" d="M212.2 122.1 L165.6 167.6"/>
+        <circle class="sgr-star sgr-faint" style="--i:4" cx="49.8" cy="14.0" r="1.7"/>
+        <circle class="sgr-star sgr-faint" style="--i:5" cx="192.0" cy="14.5" r="1.7"/>
+        <circle class="sgr-star sgr-faint" style="--i:6" cx="14.0" cy="22.3" r="1.7"/>
+        <circle class="sgr-star sgr-faint" style="--i:7" cx="182.1" cy="195.0" r="1.7"/>
+        <circle class="sgr-star" style="--i:0" cx="212.2" cy="122.1" r="2.2"/>
+        <circle class="sgr-star" style="--i:1" cx="173.6" cy="115.3" r="2.5"/>
+        <circle class="sgr-halo" style="--i:2" cx="165.6" cy="167.6" r="7.8"/>
+        <circle class="sgr-star sgr-bright" style="--i:2" cx="165.6" cy="167.6" r="3.3"/>
+        <circle class="sgr-star" style="--i:3" cx="156.0" cy="64.6" r="2.4"/>
+        <circle class="sgr-star" style="--i:4" cx="111.1" cy="82.7" r="2.0"/>
+        <circle class="sgr-halo" style="--i:5" cx="86.6" cy="74.7" r="7.6"/>
+        <circle class="sgr-star sgr-bright" style="--i:5" cx="86.6" cy="74.7" r="3.1"/>
+        <circle class="sgr-star" style="--i:6" cx="68.0" cy="115.9" r="2.6"/>
+        <circle class="sgr-star" style="--i:7" cx="57.0" cy="90.5" r="1.9"/>
+        </svg>
+        <figcaption><svg class="zodiac" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 17 L17 3 M9 3 H17 V11 M5 10 L10 15" /></svg> Sagittarius</figcaption>
+      </figure>
+      <div class="scroll-note">A journey in five chapters <span>↓</span></div>
+    </section>
+
+    <section class="scene" id="scene-descent" data-scene="descent">
+      <div class="descent-center">
+        <p class="eyebrow">Approaching the event horizon</p>
+        <h2 class="display">Let's get your present.</h2>
+        <p class="body-copy">The universe is about to fold around you.</p>
+        <div class="distance"><span id="distanceValue">Distance: 100%</span><div class="distance-track"><i id="distanceBar"></i></div></div>
+      </div>
+      <div class="descent-caption" id="descentCaption">Follow the light</div>
+    </section>
+
+    <section class="scene" id="scene-whitehole" data-scene="whitehole">
+      <div class="white-hole" aria-hidden="true"><div class="wh-orbit-track"><div class="wh-ring"></div><div class="wh-orbitting-body"></div></div><div class="wh-core"></div><div class="wh-rays"></div></div>
+      <div class="whitehole-copy">
+        <p class="eyebrow">A different side of the unknown</p>
+        <h2 class="display">and then...<br><em>THERE WAS LIGHT.</em></h2>
+        <p class="body-copy">Somewhere new is waiting.</p>
+       <button class="primary-button" id="emergeButton">
+  <span>Enter the universe</span><i>↗</i>
+</button>
+      </div>
+    </section>
+
+    <section class="scene" id="scene-universe" data-scene="universe">
+      <div class="universe-heading">
+        <p class="eyebrow">You have arrived</p>
+        <h2 class="display">A quieter kind<br>of infinity.</h2>
+        <p class="body-copy">Follow the constellation. It has been waiting for you.</p>
+      </div>
+      <div class="planet-system" id="planetSystem" data-stage="0" role="group" aria-label="An illustration that changes with each star">
+
+        <!-- 1 · the quiet world: a planet that turns, ringed by slowly circling light -->
+        <div class="stage stage-planet is-active" data-stage="0">
+          <svg viewBox="0 0 300 300" aria-hidden="true">
+            <defs>
+              <clipPath id="planetClip"><circle cx="150" cy="150" r="66"/></clipPath>
+              <clipPath id="ringBack"><rect x="0" y="0" width="300" height="150"/></clipPath>
+              <clipPath id="ringFront"><rect x="0" y="150" width="300" height="150"/></clipPath>
+              <radialGradient id="limb" cx="40%" cy="38%" r="72%">
+                <stop offset="0" stop-color="#fff" stop-opacity=".16"/>
+                <stop offset=".55" stop-color="#070b16" stop-opacity="0"/>
+                <stop offset="1" stop-color="#070b16" stop-opacity=".55"/>
+              </radialGradient>
+            </defs>
+            <g transform="rotate(-16 150 150)">
+              <g clip-path="url(#ringBack)"><ellipse class="ring-band" cx="150" cy="150" rx="128" ry="38"/><ellipse class="ring-band" cx="150" cy="150" rx="100" ry="29"/><ellipse class="ring-dots" cx="150" cy="150" rx="114" ry="33.5" pathLength="528"/></g>
+              <g clip-path="url(#planetClip)">
+                <circle class="p-base" cx="150" cy="150" r="66"/>
+                <rect class="stripe-lt" x="80" y="104" width="140" height="9"/>
+                <rect class="stripe-dk" x="80" y="127" width="140" height="14"/>
+                <rect class="stripe-lt" x="80" y="153" width="140" height="8"/>
+                <rect class="stripe-dk" x="80" y="176" width="140" height="13"/>
+                <g class="drift d1"><ellipse cx="-20" cy="108.5" rx="15" ry="3.2"/><ellipse cx="50" cy="108.5" rx="15" ry="3.2"/><ellipse cx="120" cy="108.5" rx="15" ry="3.2"/><ellipse cx="190" cy="108.5" rx="15" ry="3.2"/><ellipse cx="260" cy="108.5" rx="15" ry="3.2"/></g>
+                <g class="drift d2"><ellipse cx="-45" cy="134" rx="18" ry="4.2"/><ellipse cx="25" cy="134" rx="18" ry="4.2"/><ellipse cx="95" cy="134" rx="18" ry="4.2"/><ellipse cx="165" cy="134" rx="18" ry="4.2"/><ellipse cx="235" cy="134" rx="18" ry="4.2"/></g>
+                <g class="drift d3"><ellipse cx="-10" cy="157" rx="13" ry="3"/><ellipse cx="60" cy="157" rx="13" ry="3"/><ellipse cx="130" cy="157" rx="13" ry="3"/><ellipse cx="200" cy="157" rx="13" ry="3"/><ellipse cx="270" cy="157" rx="13" ry="3"/></g>
+                <g class="drift d4"><ellipse cx="-55" cy="182.5" rx="17" ry="4"/><ellipse cx="15" cy="182.5" rx="17" ry="4"/><ellipse cx="85" cy="182.5" rx="17" ry="4"/><ellipse cx="155" cy="182.5" rx="17" ry="4"/><ellipse cx="225" cy="182.5" rx="17" ry="4"/></g>
+                <g class="storm-drift"><ellipse class="storm" cx="60" cy="148" rx="13" ry="7.5"/></g>
+                <circle cx="150" cy="150" r="66" fill="url(#limb)"/>
+              </g>
+              <circle class="p-edge" cx="150" cy="150" r="66"/>
+              <g clip-path="url(#ringFront)"><ellipse class="ring-band" cx="150" cy="150" rx="128" ry="38"/><ellipse class="ring-band" cx="150" cy="150" rx="100" ry="29"/><ellipse class="ring-dots" cx="150" cy="150" rx="114" ry="33.5" pathLength="528"/></g>
+            </g>
+          </svg>
+          <button class="planet" id="planetButton" aria-label="Discover the planet"></button>
+        </div>
+
+        <!-- 2 · the patient moon: slowly changing phase, one ember keeping it company -->
+        <div class="stage stage-moon" data-stage="1">
+          <svg viewBox="0 0 300 300" aria-hidden="true">
+            <defs><clipPath id="moonClip"><circle cx="150" cy="150" r="70"/></clipPath></defs>
+            <path class="moon-orbit" d="M150 32 a118 118 0 1 1 0 236 a118 118 0 1 1 0 -236"/>
+            <circle class="moon-disc" cx="150" cy="150" r="70"/>
+            <g clip-path="url(#moonClip)">
+              <circle class="crater" cx="120" cy="126" r="11"/>
+              <circle class="crater" cx="174" cy="116" r="7"/>
+              <circle class="crater" cx="162" cy="178" r="14"/>
+              <circle class="crater" cx="112" cy="176" r="6"/>
+              <circle class="crater" cx="192" cy="156" r="5"/>
+              <circle class="moon-shadow" cx="150" cy="150" r="72"/>
+            </g>
+            <circle class="moon-edge" cx="150" cy="150" r="70"/>
+            <circle class="sat" r="5">
+              <animateMotion dur="16s" repeatCount="indefinite" path="M150 32 a118 118 0 1 1 0 236 a118 118 0 1 1 0 -236"/>
+            </circle>
+          </svg>
+        </div>
+
+        <!-- 3 · the long way home: a comet crossing the dark toward a small waiting light -->
+        <div class="stage stage-comet" data-stage="2">
+          <svg viewBox="0 0 300 300" aria-hidden="true">
+            <defs>
+              <linearGradient id="cometTail" gradientUnits="userSpaceOnUse" x1="-110" y1="0" x2="0" y2="0">
+                <stop offset="0" stop-color="#d9531c" stop-opacity="0"/>
+                <stop offset="1" stop-color="#d9531c" stop-opacity=".9"/>
+              </linearGradient>
+            </defs>
+            <circle class="dust" cx="46" cy="62" r="1.8"/><circle class="dust" cx="120" cy="34" r="1.4"/>
+            <circle class="dust" cx="236" cy="46" r="1.8"/><circle class="dust" cx="270" cy="170" r="1.4"/>
+            <circle class="dust" cx="38" cy="150" r="1.4"/><circle class="dust" cx="190" cy="250" r="1.8"/>
+            <circle class="dust" cx="92" cy="268" r="1.4"/>
+            <path id="cometPath" class="comet-path" d="M22 238 C70 110 170 40 268 92"/>
+            <circle class="dest-ripple" cx="268" cy="92" r="6"/>
+            <circle class="dest-ripple dr2" cx="268" cy="92" r="6"/>
+            <circle class="dest" cx="268" cy="92" r="6"/>
+            <g class="comet">
+              <animateMotion dur="6.5s" repeatCount="indefinite" rotate="auto" calcMode="spline" keyTimes="0;1" keyPoints="0;1" keySplines=".45 0 .55 1">
+                <mpath href="#cometPath"/>
+              </animateMotion>
+              <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.12;.88;1" dur="6.5s" repeatCount="indefinite"/>
+              <polygon points="0,-5.5 -110,0 0,5.5" fill="url(#cometTail)"/>
+              <circle r="7.5" class="comet-head"/>
+              <circle r="3" fill="#fff"/>
+            </g>
+          </svg>
+        </div>
+
+        <!-- 4 · where I keep you: a heart that draws itself out of stars -->
+        <div class="stage stage-heart" data-stage="3">
+          <svg viewBox="0 0 300 300" aria-hidden="true">
+            <circle class="pulse" cx="150" cy="160" r="104"/>
+            <circle class="pulse r2" cx="150" cy="160" r="104"/>
+            <g class="heart-group">
+              <path class="heart-fill" d="M150 252 C62 192 34 132 62 94 C86 62 130 68 150 104 C170 68 214 62 238 94 C266 132 238 192 150 252 Z"/>
+              <path class="heart-dots" d="M150 252 C62 192 34 132 62 94 C86 62 130 68 150 104 C170 68 214 62 238 94 C266 132 238 192 150 252 Z"/>
+              <path class="heart-draw" id="heartPath" pathLength="100" d="M150 252 C62 192 34 132 62 94 C86 62 130 68 150 104 C170 68 214 62 238 94 C266 132 238 192 150 252 Z"/>
+              <g id="heartStars"></g>
+            </g>
+          </svg>
+        </div>
+
+        <div class="planet-label" aria-live="polite"><span id="stageName">The quiet world</span> <small id="stageCount">01 / 04</small></div>
+      </div>
+      <div class="constellation-panel">
+        <p class="eyebrow">A constellation of little things</p>
+        <div class="constellation" id="constellation">
+          <svg viewBox="0 0 320 190" role="img" aria-label="A constellation with three stars">
+            <path d="M48 130 L130 54 L205 112 L270 38" class="constellation-line"/>
+            <circle cx="48" cy="130" r="5" class="star-node" data-note="0"/>
+            <circle cx="130" cy="54" r="5" class="star-node" data-note="1"/>
+            <circle cx="205" cy="112" r="5" class="star-node" data-note="2"/>
+            <circle cx="270" cy="38" r="5" class="star-node" data-note="3"/>
+          </svg>
+          <div class="constellation-hint">Tap the stars to unlock their messages</div>
+        </div>
+        <div class="message-card" id="messageCard" aria-live="polite">
+          <span class="message-index">Star 01</span>
+          <p id="messageText">I love you, so please don't ever forget about me. I'll be there whenever you need me.</p>
+          <button id="nextMessage" class="text-button">Next star <span>→</span></button>
+        </div>
+      </div>
+      <button class="continue-button" id="toLetter">Continue the journey <span>↗</span></button>
+    </section>
+
+    
+<section class="scene" id="scene-letter" data-scene="letter">
+  <div class="letter-orbit" aria-hidden="true">
+    <span></span><span></span><span></span>
+  </div>
+
+  <div class="letter-wrap">
+    <p class="eyebrow">A message from this little universe</p>
+
+    <button class="envelope" id="openLetter" aria-label="Open the letter">
+      <span class="envelope-glow"></span>
+      <span class="envelope-back"></span>
+      <span class="letter-paper">
+        <b>For you</b>
+        <small>A little note</small>
+      </span>
+      <span class="envelope-front"></span>
+    </button>
+
+    <p class="envelope-hint" id="envelopeHint">
+      There is something here for you
+    </p>
+
+    <article class="letter-content" id="letterContent">
+
+      <p class="eyebrow">TO SOMEONE WONDERFUL</p>
+
+      <h2 class="birthday-title">Happy Birthday, K'Vitha.</h2>
+
+      <h3 class="display letter-salutation">Dear K'Vitha,</h3>
+
+      <p id="letterBody">
+        Happy birthday. Somehow, another year has found its way to you.
+        And here you are, standing at the beginning of another chapter,
+        carrying new stories, new experiences, and countless new possibilities.
+      </p>
+
+      <p>
+        I know life has been quite a handful lately. Assignments waiting
+        to be finished, deadlines getting closer, group projects that seem
+        to have no end, presentations to prepare, and responsibilities
+        in your ministry that ask for your time and energy.
+      </p>
+
+      <p>
+        So, before anything else, I hope you know this:
+        you don't have to figure everything out all at once.
+      </p>
+
+      <p>
+        I hope your presentations go well, your assignments become a little
+        less overwhelming, your group projects find their way to completion,
+        and every deadline becomes something you can look back on with relief.
+        When things get a little too loud, I hope you find the courage to pause,
+        breathe, and give yourself the rest you deserve.
+      </p>
+
+      <p>
+        Please don't forget that you're a person before you're a student,
+        a friend, or someone with responsibilities to fulfill.
+        You deserve days that aren't measured by how much you've accomplished.
+        You deserve peaceful mornings, unhurried meals, silly conversations,
+        good music, unexpected laughter, and nights when you can finally
+        close your eyes without thinking about everything waiting for tomorrow.
+      </p>
+
+      <p>
+        And about the things you're pursuing, I hope you never lose the
+        excitement that brought you there in the first place.
+        May you continue growing into someone you're proud to become.
+        Not because you have to prove something to the world,
+        but because there's so much more of life waiting for you to discover.
+      </p>
+
+      <p>
+        There's something beautiful about watching someone grow.
+        You begin to discover places you never knew existed, meet people
+        who become part of your everyday stories, and experience things
+        that slowly change the way you see the world.
+      </p>
+
+      <p>
+        And even though life sometimes takes people through different
+        directions, I think there's something wonderful about knowing
+        that someone you care about is out there making memories of their own.
+      </p>
+
+      <p>
+        I'm genuinely happy that you're experiencing new things,
+        meeting new people, and finding your own little universe.
+        I hope you enjoy every part of it. Make memories worth keeping,
+        discover things worth loving, and find places where you can
+        be completely yourself.
+      </p>
+
+      <p>
+        If there's one thing I wish for you this year, it's that you become
+        gentler with yourself. I hope you learn to celebrate the little
+        victories, too. Not just the big achievements, but also the days
+        when you simply did your best despite being tired.
+        Those days count, too. And you deserve to be proud of them.
+      </p>
+
+      <p>
+        Thank you for being part of my story, for the conversations,
+        the memories, the little moments, and all the things that have
+        made knowing you meaningful to me. There are probably many things
+        I haven't expressed properly, but I hope you know that I sincerely
+        wish good things for you.
+      </p>
+
+      <p>
+        I hope God guides every step you take, gives you strength when
+        things become difficult, wisdom when you have to make decisions,
+        and peace in moments when you don't know what comes next.
+        May He protect you, bless your studies, your friendships,
+        your service, your dreams, and every little beginning that awaits you.
+      </p>
+
+      <p>
+        And please, don't let the pressure of becoming someone make you
+        forget to enjoy being who you are today.
+        You don't need to have everything figured out.
+        You just need to keep moving at your own pace, allowing yourself
+        to learn, make mistakes, grow, and experience life as it comes.
+      </p>
+
+      <p>
+        So here's to another year of discovering new things.
+        To more beautiful places, more meaningful encounters,
+        more answered prayers, more laughter, and more reasons
+        to look forward to tomorrow.
+      </p>
+
+      <p>
+        May this year be kinder to you. May your heart find peace,
+        your efforts find their way to something beautiful,
+        and may you always have something to look forward to,
+        even on the most ordinary days.
+      </p>
+
+      <p>
+        Keep becoming. Keep discovering. Keep finding your light.
+        And wherever life takes you next, I hope the universe always
+        has something wonderful waiting around the corner.
+      </p>
+
+      <p class="signature">
+        With all the good wishes,
+        <span>Someone who loves you.</span>
+      </p>
+
+    </article>
+
+    <button class="primary-button final-button" id="finalReveal">
+      <span>One last thing</span><i>✦</i>
+    </button>
+
+  </div>
+</section>
+
+
+    <section class="scene" id="scene-finale" data-scene="finale">
+      <div class="finale-stars" aria-hidden="true"></div>
+      <div class="finale-copy">
+        <p class="eyebrow">The secret of this little universe</p>
+        <h2 class="display">Today, the stars<br><em>celebrate you.</em></h2>
+        <p class="body-copy">Happy birthday, K'Vitha.<br>May your next orbit be full of wonder.</p>
+        <div class="finale-sign">Made with love <span>✦</span></div>
+        <button class="text-button replay-button" id="replayJourney">Travel through again ↺</button>
+      </div>
+    </section>
+  </main>
+
+  <aside class="audio-dock">
+
+    <button id="musicToggle"
+        class="audio-play"
+        aria-label="Play or pause music">▶</button>
+
+    <button id="soundToggle"
+        class="audio-play"
+        aria-label="Sound effects on"
+        aria-pressed="true">SFX</button>
+
+    <button id="volumeToggle"
+        class="audio-play"
+        aria-label="Volume settings"
+        aria-expanded="false">VOL</button>
+
+    <label class="volume-control"
+        id="volumeControl"
+        title="Volume">
+        <input id="volumeSlider"
+            type="range"
+            min="0"
+            max="1"
+            step="0.01"
+            value="0.55">
+    </label>
+
+    <span id="audioStatus" role="status"></span>
+
+</aside>
+
+  <div class="flash" id="sceneFlash" aria-hidden="true"></div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="js/config.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/starfield.js"></script>
+  <script src="js/scenes.js"></script>
+  <script src="js/interactions.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
