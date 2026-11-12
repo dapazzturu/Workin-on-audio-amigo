@@ -8,7 +8,7 @@
 
     const cfg = window.BEYOND_CONFIG || {};
 
-    const MUSIC_PATH = cfg.musicPath || "assets/audio/ambient.mp3";
+    const MUSIC_PATH = cfg.musicPath || "Assets/Audio/ambient.mp3";
     const SFX_PATH = cfg.sfxPath || "Assets/Audio/";
 
     const sfxFiles = {
